@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose ,{Schema} = require("mongoose");
 
-const productSchem = new mongoose.model({
+const productSchem = new Schema({
   name: {
     type: String,
     required: true,
@@ -15,9 +15,9 @@ const productSchem = new mongoose.model({
   images: {
     type: Array,
   },
-  owner: {
-    type: String,
-  },
+  // owner: {
+  //   type: Schema.Types.ObjectId,
+  // },
   cost: {
     type: Number,
   },

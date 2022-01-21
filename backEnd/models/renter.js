@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose,{Schema} = require("mongoose");
 
-const renterSchema = new mongoose.model({
+const renterSchema = new Schema({
   name: {
     type: String,
     required: true,
