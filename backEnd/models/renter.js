@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Renter = mongoose.model({
+const renterSchema = new mongoose.model({
   name: {
     type: String,
     required: true,
@@ -26,5 +26,7 @@ const Renter = mongoose.model({
     type: Date,
   },
 });
+
+const Renter = mongoose.model("Renter", renterSchema);
 
 module.exports = Renter;
