@@ -6,12 +6,11 @@ router.get("/", async (req, res) => {
   const allProducts = await Product.find();
   console.log("allProducts", allProducts);
 
-  // res.status(200).json({
-  //   message: "showing all products !",
-  //   allProducts,
-  // });
-
   res.render("products/index", { allProducts });
+});
+
+router.get("/new", async (req, res) => {
+  res.render("products/productForm");
 });
 
 router.post("/", async (req, res) => {

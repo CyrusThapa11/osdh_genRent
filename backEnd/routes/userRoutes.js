@@ -6,4 +6,6 @@ router.get("/", (req, res) =>
   })
 );
 
+router.get("/new", (req, res) => res.render("users/userForm"));
+
 module.exports = router;
