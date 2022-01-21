@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+let Schema = mongoose.Schema
+const {ObjectId} = mongoose.Schema.Types
 
-const User = mongoose.model({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -28,4 +30,5 @@ const User = mongoose.model({
   },
 });
 
-module.exports = User;
+
+mongoose.model("User",userSchema)

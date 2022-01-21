@@ -1,15 +1,22 @@
 const express = require("express");
 const PORT = process.env.PORT || 5000;
 const app = express();
+const mongoose = require('mongoose')
+const db = require("./db");
 
-const userRoutes = require("./routes/userRoutes");
-const renterRoutes = require("./routes/renterRoutes");
+require("./models/product")
+require("./models/renter")
+require("./models/user")
 
-app.use("/api/user");
-app.use("/api/renter");
+app.use(express.json())
 
-app.use(PORT, () => {
+app.use(require("./routes/userRoutes"));
+app.use(require("./routes/renterRoutes"));
+app.use(require("./routes/productRoutes"));
+
+
+
+app.listen(PORT, () => {
   console.log(`running at : http://localhost:${PORT}/`);
 });
 
-module.exports = { app };

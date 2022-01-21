@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+let Schema = mongoose.Schema
+const {ObjectId} = mongoose.Schema.Types
 
-const Renter = mongoose.model({
+const renterSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -14,7 +16,7 @@ const Renter = mongoose.model({
     required: true,
   },
   productId: {
-    type: ObjectId,
+    type: ObjectId
   },
   duration: {
     type: Number,
@@ -27,4 +29,4 @@ const Renter = mongoose.model({
   },
 });
 
-module.exports = Renter;
+mongoose.model("Renter",renterSchema)

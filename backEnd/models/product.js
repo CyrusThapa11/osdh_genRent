@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+let Schema = mongoose.Schema
+const {ObjectId} = mongoose.Schema.Types
 
-const Product = mongoose.model({
+const productSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -15,12 +17,14 @@ const Product = mongoose.model({
   images: {
     type: Array,
   },
-  owner: {
-    type: String,
-  },
+  // owner: {
+  //   type: Schema.Types.ObjectId,
+  // },
   cost: {
     type: Number,
   },
 });
+
+const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product;
