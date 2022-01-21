@@ -5,6 +5,10 @@ const db = require("./db");
 const userRoutes = require("./routes/userRoutes");
 const renterRoutes = require("./routes/renterRoutes");
 const productRoutes = require("./routes/productRoutes");
+const { urlencoded } = require("express");
+
+app.use(express.json());
+app.use(urlencoded({ extended: true }));
 
 app.use("/api/user", userRoutes);
 app.use("/api/renter", renterRoutes);

@@ -1,13 +1,12 @@
-const mongoose ,{Schema} = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = require("mongoose");
 
 const productSchem = new Schema({
   name: {
     type: String,
-    required: true,
   },
   rentedtype: {
     type: String,
-    unique: true,
   },
   categories: {
     type: Array,

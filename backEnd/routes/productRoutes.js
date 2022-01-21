@@ -1,3 +1,5 @@
+const Product = require("../models/product");
+
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
@@ -6,9 +8,15 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+  const produ = req.body;
+  console.log("produ", produ);
+  const product = await Product.create(req.body);
+  //   const savedP = await product.save();
+  console.log("product", product);
   res.json({
-    message: "showing all products !",
+    message: "added a product !",
+    product,
   });
 });
 
