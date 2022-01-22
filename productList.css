@@ -148,6 +148,14 @@ font-family: open-sans, Arial, Helvetica, sans-serif;
 
  }
 
+ #sortBy{
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    margin-left: 275px;
+    font-weight:bold;
+    margin-bottom: 0px;
+}
+
  .cta button{
 
     float: right;
